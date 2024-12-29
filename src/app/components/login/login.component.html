@@ -1,0 +1,75 @@
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <!-- Image Section -->
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">9antra.tn-The Bridge</h4>
+                <p class="small mb-0">The Bridge, allows any student, staff or professional to acquire relevant online training to embark on the future employment opportunity with guaranteed follow-up.       
+              </div>
+            </div>
+
+            <!-- Login Form Section -->
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="assets\img\bridge.png"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1"></h4>
+                </div>
+
+                <form (ngSubmit)="login()">
+                  
+                  
+
+                  <!-- Username -->
+                  <div class="form-outline mb-4">
+                    <input
+                      type="text"
+                      id="username"
+                      class="form-control form-control-lg"
+                      [(ngModel)]="loginData.username"
+                      name="username"
+                      placeholder="Enter your username"
+                      required
+                    />
+                    <label for="username" class="form-label text-dark">Username</label>
+                  </div>
+
+                  <!-- Password -->
+                  <div class="form-outline mb-3">
+                    <input
+                      type="password"
+                      id="password"
+                      class="form-control form-control-lg"
+                      [(ngModel)]="loginData.password"
+                      name="password"
+                      placeholder="Enter your password"
+                      required
+                    />
+                    <label for="password" class="form-label text-dark">Password</label>
+                  </div>
+
+                 
+
+                  <!-- Login Button -->
+                  <div class="text-center pt-1 mb-5 pb-1">
+                    <button type="submit" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Log in</button>
+                  </div>
+
+                 
+
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

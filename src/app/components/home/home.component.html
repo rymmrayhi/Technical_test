@@ -1,0 +1,121 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light" style="background: linear-gradient(to right, #ff7e5f, #feb47b); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" href="#">
+      <img src="assets\img\bridge.png" alt="Logo" style="height: 40px;" />
+    </a>
+
+    <!-- Navigation Links -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#courses" style="font-weight: bold;">Courses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" href="#contact" style="font-weight: bold;">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/login" class="btn btn-outline-dark ms-3">Se connecter</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- BanniÃ¨re -->
+<div
+  class="banner text-center p-5 mb-5"
+  style="
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)),
+      url('https://website2021-live-e3e78fbbd3cc41f2847799-7c49c59.divio-media.com/filer_public/73/52/7352020b-b331-47f5-8405-3d114bf0f28a/types-of-meetings.png') no-repeat center;
+    background-size: cover;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  "
+>
+  <h1 style="font-family: 'Roboto', sans-serif; font-weight: bold;">Improve your skills on your own</h1>
+  <p style="font-size: 1.2rem;">To prepare for a better future</p>
+  <button class="btn btn-warning btn-lg">REGISTER NOW</button>
+</div>
+
+<!-- Section Cours -->
+<div class="container mt-5" id="courses">
+  <h2 class="text-center mb-4" style="font-family: 'Roboto', sans-serif; font-weight: bold;">Discover Our Courses</h2>
+  <div class="row">
+    <div class="col-md-4 mb-3" *ngFor="let course of courses">
+      <div class="card shadow-lg" style="border: none;">
+        <img
+          [src]="course.image"
+          class="card-img-top"
+          alt="{{ course.title }}"
+          style="border-radius: 10px 10px 0 0;"
+        />
+        <div class="card-body" style="background-color: #f9f9f9; border-radius: 0 0 10px 10px;">
+          <h5 class="card-title" style="font-weight: bold; color: #333;">{{ course.title }}</h5>
+          <p class="card-text" style="color: #555;">{{ course.price }} DT/Month</p>
+          <button class="btn btn-outline-primary w-100">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Section Contact -->
+<div
+  class="contact mt-5 p-5"
+  id="contact"
+  style="background: linear-gradient(to right, #6a11cb, #2575fc); color: white; border-radius: 15px;"
+>
+  <h2 class="text-center mb-4">Get in Touch</h2>
+  <form (ngSubmit)="submitContact()" style="max-width: 700px; margin: auto;">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input
+          type="text"
+          id="name"
+          class="form-control border-0 shadow-sm"
+          [(ngModel)]="contact.name"
+          name="name"
+          required
+          style="background-color: rgba(255, 255, 255, 0.8); z-index: 1; position: relative;"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input
+          type="email"
+          id="email"
+          class="form-control border-0 shadow-sm"
+          [(ngModel)]="contact.email"
+          name="email"
+          required
+          style="background-color: rgba(255, 255, 255, 0.8); z-index: 1; position: relative;"
+        />
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="message" class="form-label">Message</label>
+      <textarea
+        id="message"
+        class="form-control border-0 shadow-sm"
+        [(ngModel)]="contact.message"
+        name="message"
+        required
+        style="height: 150px; background-color: rgba(255, 255, 255, 0.8); z-index: 1; position: relative;"
+      ></textarea>
+    </div>
+    <button
+      type="submit"
+      class="btn btn-light w-100 shadow-lg"
+      style="font-weight: bold; margin-top: 15px; margin-bottom: 15px;"
+    >
+      Send Message
+    </button>
+  </form>
+</div>

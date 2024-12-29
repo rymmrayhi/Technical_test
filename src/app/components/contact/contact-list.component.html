@@ -1,0 +1,55 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="font-weight: bold; font-size: 1.5rem; color: #333;">The Bridge</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/courses" routerLinkActive="active" style="color: #555;">Course List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts" routerLinkActive="active" style="color: #555;">Contact List</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a class="btn btn-outline-primary" routerLink="" style="border-radius: 20px; padding: 5px 20px;">Sign out</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h2 class="text-center" style="color: #333; font-weight: bold; margin-bottom: 30px;">Contact List</h2>
+  <table class="table table-hover" style="border: 1px solid #ddd; background-color: #f9f9f9; border-radius: 10px; overflow: hidden;">
+    <thead style="background-color: #6a11cb; color: white; text-align: center;">
+      <tr>
+        <th style="padding: 10px;">Name</th>
+        <th style="padding: 10px;">Email</th>
+        <th style="padding: 10px;">Message</th>
+        <th style="padding: 10px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let contact of contacts" style="text-align: center; border-bottom: 1px solid #ddd;">
+        <td style="padding: 10px;">{{ contact.name }}</td>
+        <td style="padding: 10px;">{{ contact.email }}</td>
+        <td style="padding: 10px;">{{ contact.message }}</td>
+        <td style="padding: 10px;">
+          <button class="btn btn-danger btn-sm" (click)="deleteContact(contact.id!)" style="background: linear-gradient(to right, #ff7e5f, #feb47b); border: none; color: white; border-radius: 5px;">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,81 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" style="box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="font-weight: bold; font-size: 1.5rem; color: #333;">The Bridge</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/courses" routerLinkActive="active" style="color: #555;">Course List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contacts" routerLinkActive="active" style="color: #555;">Contact List</a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a class="btn btn-outline-primary" routerLink="" style="border-radius: 20px; padding: 5px 20px;">Sign out</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5" style="max-width: 600px; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+  <h2 class="text-center mb-4" style="color: #333; font-weight: bold;">{{ course.id ? 'Modifier un cours' : 'Add a Course' }}</h2>
+  <form (ngSubmit)="saveCourse()">
+    <div class="mb-3">
+      <label for="title" class="form-label" style="font-weight: bold; color: #555;">Title</label>
+      <input
+        type="text"
+        id="title"
+        class="form-control shadow-sm"
+        [(ngModel)]="course.title"
+        name="title"
+        placeholder="Enter course title"
+        required
+        style="border: 1px solid #ddd; border-radius: 5px;"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label" style="font-weight: bold; color: #555;">Image</label>
+      <input
+        type="text"
+        id="image"
+        class="form-control shadow-sm"
+        [(ngModel)]="course.image"
+        name="image"
+        placeholder="Enter image URL"
+        required
+        style="border: 1px solid #ddd; border-radius: 5px;"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label" style="font-weight: bold; color: #555;">Price (DT/Month)</label>
+      <input
+        type="number"
+        id="price"
+        class="form-control shadow-sm"
+        [(ngModel)]="course.price"
+        name="price"
+        placeholder="Enter course price"
+        required
+        style="border: 1px solid #ddd; border-radius: 5px;"
+      />
+    </div>
+    <button
+      type="submit"
+      class="btn btn-success w-100 shadow-sm"
+      style="font-weight: bold; padding: 10px 20px; border-radius: 5px; background: linear-gradient(to right, #6a11cb, #2575fc); color: white; border: none;"
+    >
+      Save
+    </button>
+  </form>
+</div>
